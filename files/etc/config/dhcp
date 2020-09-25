@@ -1,0 +1,40 @@
+
+config dnsmasq
+	option domainneeded '1'
+	option localise_queries '1'
+	option rebind_protection '1'
+	option rebind_localhost '1'
+	option local '/lan/'
+	option domain 'lan'
+	option expandhosts '1'
+	option authoritative '1'
+	option readethers '1'
+	option leasefile '/tmp/dhcp.leases'
+	option resolvfile '/tmp/resolv.conf.auto'
+	option nonwildcard '1'
+	option localservice '1'
+	option filter_aaaa '1'
+	option quietdhcp '1'
+
+config dhcp 'lan'
+	option interface 'lan'
+	option start '100'
+	option limit '150'
+	option leasetime '12h'
+
+config dhcp 'wan'
+	option interface 'wan'
+	option ignore '1'
+
+config host
+	option name 'DiskStation'
+	option dns '1'
+	option mac '00:11:32:9c:d8:21'
+	option ip '10.0.1.18'
+
+config host
+	option name 'Orbi'
+	option dns '1'
+	option mac '38:94:ed:a9:25:05'
+	option ip '10.0.1.118'
+
