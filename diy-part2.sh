@@ -16,14 +16,10 @@ rm -rf feeds/packages/net/haproxy
 mv haproxy feeds/packages/net
 
 # SSR-Plus
-svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
+git clone https://github.com/fw876/helloworld.git package/luci-app-ssr-plus
 
 # Passwall
-mkdir -p package/passwall
-svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/luci-app-passwall
-svn co https://github.com/xiaorouji/openwrt-package/trunk/package/chinadns-ng package/passwall/chinadns-ng
-svn co https://github.com/xiaorouji/openwrt-package/trunk/package/simple-obfs package/passwall/simple-obfs
-svn co https://github.com/xiaorouji/openwrt-package/trunk/package/tcping package/passwall/tcping
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
 
 # OpenClash
 svn co https://github.com/vernesong/OpenClash/branches/master/luci-app-openclash package/luci-app-openclash
